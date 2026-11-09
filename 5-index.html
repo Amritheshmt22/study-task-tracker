@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Task Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Study Task Tracker</h1>
+      <p class="subtitle">Plan your study tasks, tick them off, stay on track.</p>
+    </header>
+
+    <!-- Add task form -->
+    <form id="task-form" class="task-form" autocomplete="off">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="e.g. Revise DBMS unit 2"
+        maxlength="120"
+        aria-label="New task"
+        required
+      />
+      <button type="submit" class="btn btn-add">Add</button>
+    </form>
+
+    <!-- Filters -->
+    <div class="toolbar">
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+      <span id="task-count" class="task-count">0 tasks left</span>
+    </div>
+
+    <!-- Task list -->
+    <ul id="task-list" class="task-list"></ul>
+
+    <p id="empty-state" class="empty-state">No tasks yet. Add your first study task above.</p>
+
+    <button id="clear-completed" class="btn btn-clear" hidden>Clear completed</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
